@@ -1,0 +1,33 @@
+<h1>Burger Devourer!</h1>
+
+<img id='image' src='https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'>
+
+<h2>Eat-Da-Burger!</h2>
+
+<ul>
+  {{#each burger}}
+    {{#unless this.devoured}}
+    <li>{{this.burger_name}}</li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<ul>
+  {{#each burger}}
+    {{#if this.devoured}}
+      <li>{{this.devoured}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger!</h2>
+<form class="create-form" method="POST" action='/api/burgers'>
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="bu" name="name">
+  </div>
+
+  <button type="submit">Add burger</button>
+</form>

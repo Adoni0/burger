@@ -1,4 +1,5 @@
 var express = require('express');
+var nodemon = require('nodemon');
 
 var PORT = process.env.PORT || 8080;
 
