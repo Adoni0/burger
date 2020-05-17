@@ -1,7 +1,12 @@
-<h1>Burger Devourer!</h1>
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Burger Devourer</span>
+  
+</nav>
   
 <div class='row'>
   <div class='col-sm-3' id='undevoured'>
+    
     <h2>Burgers!</h2>
 
 <form class="create-form">
@@ -9,11 +14,12 @@
     {{#each burger}}
     {{#unless this.devoured}}
       <input type="radio" data-burger={{this.burger_name}} name="devoured" value="1" checked>{{this.burger_name}}<br>
+      {{!-- {{> burgers/burger-block devoured=false}} --}}
     {{/unless}}
     {{/each}} 
   </div>
   <br>
-  <button class='eat-burger' type='submit'>Eat this burger!</button>
+  <button class='eat-burger' data-id='{{id}}' data-newburger='{{devoured}}' type='submit'>Eat this burger!</button>
 </form>
   </div>
 
@@ -27,7 +33,8 @@
 <ul>
   {{#each burger}}
     {{#if this.devoured}}
-      <li>{{this.devoured}}</li>
+      <li>{{this.burger_name}}</li>
+      {{!-- {{> burgers/burger-block devoured=true}} --}}
     {{/if}}
   {{/each}}
 </ul>

@@ -6,6 +6,10 @@ h1{
     text-align: center;
 }
 
+.navbar{
+    background: linear-gradient(to right, #ff5858, #f857a6);
+}
+
 #image {
     height: 200px;
     width: 200px;
