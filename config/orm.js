@@ -1,24 +1,11 @@
 var connection = require('./connection.js');
 
 function objToSql(ob) {
-    var arr = [];
-    var value = ob[key];
-  
-    for(var key in ob){
-        if (Object.hasOwnProperty.call(ob, key)) {
-           
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-              value = "'" + value + "'";
-            }
-
-        arr.push(key + '=' + value);
-
-    }    
-
-  
-    // translate array of strings to a single comma-separated string
-    return arr.toString();
-  };
+   var arr = [];
+   for(var key in ob){
+       arr.push(key + '=' + ob[key]);
+   }
+   return arr.toString();
 };
   
 
@@ -55,3 +42,5 @@ var orm = {
 };
 
 module.exports = orm;
+
+console.log(objToSql({devoured: true}));
