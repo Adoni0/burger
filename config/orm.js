@@ -29,13 +29,13 @@ var orm = {
             console.log(result);
         })
     },
-    updateOne: function(tableName, column, condition, cb){
+    updateOne: function(tableName, column, condition){
         //update burgers table, set devoured = true where burger name = burger input
         var queryString = `UPDATE ${tableName} SET ${objToSql(column)} WHERE ${condition}`;
         connection.query(queryString, function(err, result){
             if (err) throw err;
            
-            cb(result);
+            // cb(result);
             console.log(result);
         })
     }
@@ -43,4 +43,4 @@ var orm = {
 
 module.exports = orm;
 
-console.log(objToSql({devoured: true}));
+// console.log(objToSql({devoured: true}));

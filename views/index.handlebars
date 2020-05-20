@@ -16,7 +16,7 @@
     <form class="create-form devour-form">
       <input class='burgers-uneaten' type="radio" data-burger={{this.burger_name}} name="devoured" value={{this.id}} checked>{{this.burger_name}}<br>
       {{!-- {{> burgers/burger-block devoured=false}} --}}
-      <button type='submit'>Eat this burger!</button>
+      <button id='submitBtn' type='submit'>Eat this burger!</button>
       </form>
     {{/unless}}
     {{/each}} 

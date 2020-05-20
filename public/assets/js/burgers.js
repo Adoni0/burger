@@ -10,8 +10,15 @@
         function() {
           console.log(id);
           // Reload the page to get the updated list
-          location.reload();
+          window.location.reload();
         }
       );
     });
+
+    $('#submitBtn').on("click", () => {
+      console.log('BUTTON CLICKED');
+      window.location.reload();
+    });
+
 });
+
